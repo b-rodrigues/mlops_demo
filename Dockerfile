@@ -36,6 +36,6 @@ RUN R -e "install.packages(c('tidymodels', 'vetiver', 'targets', 'xgboost'))"
 
 COPY _targets.R /home/mlops_demo/_targets.R
 
-COPY functions.R /home/mlops_demo/functions.R
+COPY functions /home/mlops_demo/functions
 
 CMD R -e "setwd('home/mlops_demo');targets::tar_make()"
