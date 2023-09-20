@@ -10,7 +10,7 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     env:
-      IMAGE_NAME: ess_dev_env
+      IMAGE_NAME: mlops_demo
     steps:
       - name: Setup
         uses: docker/setup-buildx-action@v2
