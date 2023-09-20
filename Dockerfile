@@ -34,8 +34,8 @@ RUN echo 'options(repos = c(REPO_NAME = "https://packagemanager.posit.co/cran/__
 
 RUN R -e "install.packages(c('tidymodels', 'vetiver', 'targets', 'xgboost'))"
 
-COPY _targets.R /_targets.R
+COPY _targets.R /home/mlops_demo/_targets.R
 
-COPY functions.R /functions.R
+COPY functions.R /home/mlops_demo/functions.R
 
-CMD R -e "targets::tar_make()"
+CMD R -e "setwd('home/mlops_demo');targets::tar_make()"
