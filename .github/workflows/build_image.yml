@@ -25,7 +25,7 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.ref_name }}-${{ github.sha }}
           push: true
       - name: Docker Run Action
-        run: docker run --rm --name my_pipeline_container -v /github/workspace/model_outputs/:/home/mlops_demo/_targets/:rw ${{ env.IMAGE_NAME }}:${{ github.ref_name }}-${{ github.sha }}
+        run: docker run --rm --name my_pipeline_container -v /github/workspace/model_outputs/:/home/mlops_demo/_targets/:rw ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.ref_name }}-${{ github.sha }}
       - uses: actions/upload-artifact@v3
         with:
           name: model_outputs
