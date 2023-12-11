@@ -24,7 +24,7 @@ list(
 
   tar_target(
     datasets,
-    get_data(n=500)
+    get_data(n=1000)
   ),
 
   tar_target(
